@@ -1,14 +1,18 @@
+#SingleInstance, force
+
+
 F1::
 	Toggle := !Toggle
     
 	If Toggle
-		SetTimer, Trigger, -1
+		SetTimer, Trigger, -1 ; this is a thread safe way to reset the loop
 return
+
 
 Trigger:
     While (Toggle)
-        {
-            SoundBeep, 1000, 100
-            Sleep, 1000
-        }
+    {
+        ToolTip, hello world 
+        Sleep, 100
+    }
 Return
